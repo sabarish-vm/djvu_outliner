@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=77.0.3"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "py_djvu_outliner"
+version = "1.0.0"
+description = ""
+readme = { file = "README.md", content-type = "text/markdown" }
+requires-python = ">=3.9"
+license = "GPL-3.0"
+authors = [{ name = "Sabarish" }]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+]
+
+[project.urls]
+Homepage = "https://github.com/sabarish-vm/djvu_outliner"
+
+[tool.setuptools]
+packages = ["djvu_outliner"]
+
+[project.scripts]
+py-djvu-outliner = "djvu_outliner:main.main"
