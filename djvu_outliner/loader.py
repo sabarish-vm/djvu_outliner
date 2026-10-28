@@ -14,7 +14,7 @@ def parser(inputfile: Path):
         previous = root
         while x := f.readline():
             if x.startswith("#SHIFT"):
-                match = re.match(r"#SHIFT\s*([0-9]+)", x)
+                match = re.match(r"#SHIFT\s*(-?[0-9]+)", x)
                 assert match is not None
                 shift = int(match.group(1))
             elif not x.startswith("#") and x != " " and x != "\n":

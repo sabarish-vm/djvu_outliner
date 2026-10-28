@@ -27,10 +27,15 @@ def cli(argv):
     return args
 
 
+def escape_djvu_string(s):
+    return s.replace("\\", "\\\\").replace('"', '\\"')
+
+
 def djvu_outline(obj, indent=""):
     result = []
 
-    title_line = f'{indent}("{obj.data.sub}" "#{obj.data.page}"'
+    title = escape_djvu_string(obj.data.sub)
+    title_line = f'{indent}("{title}" "#{obj.data.page}"'
 
     if obj.children:
         result.append(title_line + "\n")
